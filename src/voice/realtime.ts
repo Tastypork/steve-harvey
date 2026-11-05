@@ -9,7 +9,6 @@ export type VoiceStatus = 'off' | 'connecting' | 'live' | 'reconnecting' | 'erro
 interface VoiceState {
   available: boolean | null;
   status: VoiceStatus;
-  lastHeard: string;
   error: string | null;
 }
 
@@ -18,7 +17,7 @@ const WAKE = /\b(steve\s+)?h[ae]r\s?v(e|a)?y\b|\bharv\b/i;
 const WAKE_WINDOW_MS = 9_000;
 const TRANSCRIPT_WAIT_MS = 1_500;
 
-let state: VoiceState = { available: null, status: 'off', lastHeard: '', error: null };
+let state: VoiceState = { available: null, status: 'off', error: null };
 const listeners = new Set<() => void>();
 
 function set(patch: Partial<VoiceState>) {
@@ -157,7 +156,6 @@ function onTranscript(text: string, final: boolean) {
   transcriptsSeen = true;
   utterance = text;
   utteranceFinal = final;
-  if (text.trim()) set({ lastHeard: text.trim() });
   if (WAKE.test(text)) {
     wakeUntil = Date.now() + WAKE_WINDOW_MS;
     fx.listening('Listening...');
@@ -197,7 +195,6 @@ async function onFunctionCall(ev: { name?: string; call_id?: string; arguments?:
   } else {
     wakeUntil = 0;
     const id = args.answer_id && ctx.q.answers.some((a) => a.id === args.answer_id) ? args.answer_id : null;
-    if (args.heard_guess) set({ lastHeard: `Guess: ${args.heard_guess}` });
     const queued = fx.whenFree(() => {
       void applyJudgement(id);
     });

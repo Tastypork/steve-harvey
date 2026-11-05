@@ -1206,15 +1206,6 @@ optgroup {
   }
 }
 
-.heard {
-  max-width: 18vw;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: var(--mist);
-  font-style: italic;
-}
-
 .guess-form {
   display: flex;
   gap: 0.3rem;

@@ -142,11 +142,6 @@ export function HostBar({ onExit }: { onExit: () => void }) {
           {v.status === 'off' || !v.available ? <MicOff size={16} /> : <Mic size={16} />}
           <span>{micLabel}</span>
         </button>
-        {v.lastHeard ? (
-          <span className="heard" title={v.lastHeard}>
-            "{v.lastHeard}"
-          </span>
-        ) : null}
         <form
           className="guess-form"
           onSubmit={(e) => {
