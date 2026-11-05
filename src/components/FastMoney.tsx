@@ -25,18 +25,23 @@ function useNow(running: boolean) {
   return running ? now : Date.now();
 }
 
-function Clock({ timer }: { timer: FastMoneyTimer }) {
+function Clock({ timer, onExpire }: { timer: FastMoneyTimer; onExpire?: () => void }) {
   const running = timer.runningSince != null;
   const now = useNow(running);
   const left = timerRemaining(timer, now);
   const fired = useRef(false);
+  const expire = useRef(onExpire);
+  expire.current = onExpire;
 
   useEffect(() => {
     if (running && left <= 0 && !fired.current) {
       fired.current = true;
-      void play('buzzer');
-      dispatch({ type: 'fmTimer', op: 'pause', now: Date.now() });
-      fx.toast("Time's up!");
+      if (expire.current) expire.current();
+      else {
+        void play('buzzer');
+        dispatch({ type: 'fmTimer', op: 'pause', now: Date.now() });
+        fx.toast("Time's up!");
+      }
     }
     if (left > 0) fired.current = false;
   }, [running, left]);
@@ -49,7 +54,24 @@ function Clock({ timer }: { timer: FastMoneyTimer }) {
   );
 }
 
-function Pick({ game }: { game: GameState }) {
+function PickClock() {
+  const [timer] = useState<FastMoneyTimer>(() => ({
+    durationMs: 30_000,
+    remainingMs: 30_000,
+    runningSince: Date.now(),
+  }));
+  return (
+    <Clock
+      timer={timer}
+      onExpire={() => {
+        void play('buzzer');
+        fx.toast("Time's up!");
+      }}
+    />
+  );
+}
+
+function Pick({ game, questions }: { game: GameState; questions: { id: string; prompt: string }[] }) {
   const fm = game.fastMoney!;
   const ranked = rankTeams(game.teams);
   const [a, setA] = useState(fm.teamIds[0]);
@@ -59,7 +81,10 @@ function Pick({ game }: { game: GameState }) {
 
   return (
     <div className="fm-pick">
-      <h2 className="fm-title">Fast Money</h2>
+      <div className="fm-pick-head">
+        <h2 className="fm-title">Fast Money</h2>
+        <PickClock />
+      </div>
       <ol className="fm-standings">
         {ranked.map((t) => (
           <li key={t.id} className={t.id === a || t.id === b ? 'is-in' : ''}>
@@ -73,9 +98,16 @@ function Pick({ game }: { game: GameState }) {
         <p className="warn-line">
           {tieAtCut ? 'Second place is tied. ' : ''}
           {tieTop ? 'First place is tied, so choose who plays first. ' : ''}
-          Break the tie below before the clock starts.
+          Break the tie below before you start.
         </p>
       ) : null}
+      <ol className="fm-pick-questions">
+        {questions.map((q, i) => (
+          <li key={q.id}>
+            <b>{i + 1}</b> {q.prompt}
+          </li>
+        ))}
+      </ol>
       <div className="fm-pick-row">
         <label>
           <span className="field-label">Plays first</span>
@@ -97,7 +129,15 @@ function Pick({ game }: { game: GameState }) {
             ))}
           </select>
         </label>
-        <button className="show-btn is-gold" disabled={a === b} onClick={() => dispatch({ type: 'fmPick', teamIds: [a, b] })}>
+        <button
+          className="show-btn is-gold"
+          disabled={a === b}
+          onClick={() => {
+            const now = Date.now();
+            dispatch({ type: 'fmPick', teamIds: [a, b] });
+            dispatch({ type: 'fmTimer', op: 'start', now });
+          }}
+        >
           <Play size={20} /> Start Fast Money
         </button>
       </div>
@@ -185,7 +225,7 @@ export function FastMoney() {
   if (!session?.game.fastMoney) return null;
   const { game, deck } = session;
   const fm = game.fastMoney!;
-  if (fm.stage === 'pick') return <Pick game={game} />;
+  if (fm.stage === 'pick') return <Pick game={game} questions={fastMoneyQuestions(deck)} />;
 
   const questions = fastMoneyQuestions(deck);
   const teams = fm.teamIds.map((id) => game.teams.find((t) => t.id === id)!);
@@ -213,7 +253,7 @@ export function FastMoney() {
       if (!e.recorded) return <div className="fm-cell is-input"><AnswerInput fm={fm} index={index} autoFocus={index === firstOpen} /></div>;
       return (
         <button className="fm-cell is-recorded" onClick={() => dispatch({ type: 'fmUnrecord', index })} title="Click to edit">
-          <Check size={20} /> {e.answer ? 'Recorded' : 'Pass'}
+          {e.answer ? <><Check size={20} /> <span className="fm-guess">{e.answer}</span></> : 'Pass'}
         </button>
       );
     }

@@ -1707,9 +1707,45 @@ optgroup {
 }
 
 .fm-pick {
-  justify-content: center;
+  align-items: stretch;
+  gap: 1.4vh;
+}
+
+.fm-pick-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 2.4vh;
+  gap: 2vw;
+}
+
+.fm-pick-questions {
+  list-style: none;
+  margin: 0;
+  padding: 1.2vh 1.4vw;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  gap: 0.7vh;
+  border-radius: 1.4vh;
+  background: rgba(7, 18, 70, 0.75);
+  border: 0.2vh solid rgba(127, 166, 255, 0.35);
+  overflow: auto;
+}
+
+.fm-pick-questions li {
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+  font-size: clamp(1rem, 2.8vh, 2rem);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.fm-pick-questions b {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.4em;
+  color: var(--gold);
 }
 
 .fm-title {
@@ -1730,9 +1766,9 @@ optgroup {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.8vh;
-  width: min(40rem, 60vw);
 }
 
 .fm-standings li {
@@ -1968,13 +2004,21 @@ optgroup {
 }
 
 .fm-cell.is-recorded {
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 0 0.8vw;
   gap: 0.6vw;
   color: var(--gold);
   font-family: var(--display);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: clamp(1rem, 2.8vh, 2rem);
+}
+
+.fm-guess {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .fm-cell.is-recorded:hover {
