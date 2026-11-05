@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Rocket">
+  <defs><radialGradient id="b" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#ffa068"/><stop offset="1" stop-color="#c2410c"/></radialGradient></defs>
+  <circle cx="100" cy="100" r="100" fill="url(#b)"/>
+  <g transform="rotate(35 100 100)">
+    <path d="M100 30 Q128 56 128 110 L72 110 Q72 56 100 30 Z" fill="#f4f6fb" stroke="#24304f" stroke-width="5"/>
+    <circle cx="100" cy="76" r="13" fill="#29b6f6" stroke="#24304f" stroke-width="5"/>
+    <path d="M72 96 L52 128 L76 120 Z M128 96 L148 128 L124 120 Z" fill="#d7263d" stroke="#24304f" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M82 112 Q100 160 118 112 Z" fill="#ffcd41"/>
+    <path d="M90 112 Q100 140 110 112 Z" fill="#fff4c2"/>
+  </g>
+</svg>

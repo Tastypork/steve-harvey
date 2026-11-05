@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Piggy bank">
+  <defs><radialGradient id="b" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#ffd0df"/><stop offset="1" stop-color="#e5547f"/></radialGradient></defs>
+  <circle cx="100" cy="100" r="100" fill="url(#b)"/>
+  <circle cx="104" cy="44" r="14" fill="#ffcd41" stroke="#8a5a00" stroke-width="4"/>
+  <ellipse cx="100" cy="112" rx="58" ry="44" fill="#ff9dbb" stroke="#7a1f3d" stroke-width="5"/>
+  <path d="M72 78 L64 58 L88 70 Z" fill="#ff9dbb" stroke="#7a1f3d" stroke-width="5" stroke-linejoin="round"/>
+  <rect x="88" y="70" width="28" height="7" rx="3" fill="#7a1f3d"/>
+  <ellipse cx="152" cy="114" rx="14" ry="12" fill="#ffb8cd" stroke="#7a1f3d" stroke-width="5"/>
+  <circle cx="148" cy="112" r="3" fill="#7a1f3d"/><circle cx="156" cy="112" r="3" fill="#7a1f3d"/>
+  <circle cx="126" cy="98" r="5" fill="#7a1f3d"/>
+  <path d="M70 150 V166 M90 154 V168 M114 154 V168 M134 150 V166" stroke="#7a1f3d" stroke-width="10" stroke-linecap="round"/>
+</svg>

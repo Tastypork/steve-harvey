@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Wagon wheel">
+  <defs><radialGradient id="b" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#ff5b6e"/><stop offset="1" stop-color="#9a0f22"/></radialGradient></defs>
+  <circle cx="100" cy="100" r="100" fill="url(#b)"/>
+  <circle cx="100" cy="100" r="58" fill="none" stroke="#ffcd41" stroke-width="12"/>
+  <circle cx="100" cy="100" r="58" fill="none" stroke="#6b3a10" stroke-width="3"/>
+  <g stroke="#ffcd41" stroke-width="7" stroke-linecap="round">
+    <path d="M100 46 V154 M46 100 H154 M62 62 L138 138 M138 62 L62 138"/>
+  </g>
+  <circle cx="100" cy="100" r="16" fill="#ffe27a" stroke="#6b3a10" stroke-width="4"/>
+</svg>

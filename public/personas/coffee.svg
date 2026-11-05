@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Coffee mug">
+  <defs><radialGradient id="b" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#e2a46f"/><stop offset="1" stop-color="#7d4520"/></radialGradient></defs>
+  <circle cx="100" cy="100" r="100" fill="url(#b)"/>
+  <path d="M80 40 Q70 52 80 62 Q90 72 80 82 M104 36 Q94 48 104 58 Q114 68 104 78" stroke="#fff4e8" stroke-width="6" fill="none" stroke-linecap="round" opacity=".85"/>
+  <path d="M52 90 H140 V138 Q140 162 116 162 H76 Q52 162 52 138 Z" fill="#fff4e8" stroke="#3b1e0c" stroke-width="6"/>
+  <path d="M140 102 Q166 102 166 124 Q166 146 140 144" stroke="#3b1e0c" stroke-width="8" fill="none"/>
+  <path d="M58 98 H134" stroke="#5a2f14" stroke-width="10"/>
+  <path d="M84 130 Q96 140 108 130" stroke="#3b1e0c" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>

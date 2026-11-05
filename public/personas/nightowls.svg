@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Owl">
+  <defs><radialGradient id="b" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#9c85ff"/><stop offset="1" stop-color="#3a1fa8"/></radialGradient></defs>
+  <circle cx="100" cy="100" r="100" fill="url(#b)"/>
+  <path d="M56 70 L70 46 L84 64 Q100 58 116 64 L130 46 L144 70 Q156 100 146 134 Q130 166 100 166 Q70 166 54 134 Q44 100 56 70 Z" fill="#6b4e2e"/>
+  <path d="M74 126 Q100 150 126 126 Q122 158 100 160 Q78 158 74 126 Z" fill="#c9a46e"/>
+  <circle cx="80" cy="96" r="20" fill="#fff6dd"/><circle cx="120" cy="96" r="20" fill="#fff6dd"/>
+  <circle cx="82" cy="98" r="9" fill="#1c1240"/><circle cx="118" cy="98" r="9" fill="#1c1240"/>
+  <path d="M94 112 L100 124 L106 112 Z" fill="#ffb21c"/>
+  <path d="M150 40 a16 16 0 1 0 12 26 a12 12 0 1 1 -12 -26 z" fill="#ffe27a"/>
+</svg>

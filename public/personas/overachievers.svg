@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Gold star">
+  <defs><radialGradient id="b" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="#d99100"/></radialGradient></defs>
+  <circle cx="100" cy="100" r="100" fill="url(#b)"/>
+  <path d="M100 34 l19 40 44 6 -32 30 8 44 -39 -21 -39 21 8 -44 -32 -30 44 -6z" fill="#fff8de" stroke="#7a4a00" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="86" cy="100" r="5" fill="#7a4a00"/><circle cx="114" cy="100" r="5" fill="#7a4a00"/>
+  <path d="M88 118 Q100 128 112 118" stroke="#7a4a00" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>

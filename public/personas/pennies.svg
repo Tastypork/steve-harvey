@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Lucky penny">
+  <defs>
+    <radialGradient id="b" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#2f8f5b"/><stop offset="1" stop-color="#0f4a2c"/></radialGradient>
+    <radialGradient id="c" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#f0a46a"/><stop offset="1" stop-color="#9a4f1f"/></radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#b)"/>
+  <circle cx="100" cy="100" r="58" fill="url(#c)" stroke="#5c2a0c" stroke-width="6"/>
+  <circle cx="100" cy="100" r="46" fill="none" stroke="#5c2a0c" stroke-width="3" stroke-dasharray="4 6"/>
+  <g fill="#3f8f3a" stroke="#1b4d18" stroke-width="3">
+    <circle cx="100" cy="84" r="13"/><circle cx="84" cy="100" r="13"/><circle cx="116" cy="100" r="13"/><circle cx="100" cy="116" r="13"/>
+  </g>
+  <path d="M100 116 Q104 132 114 140" stroke="#1b4d18" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg>

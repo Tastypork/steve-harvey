@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Gold nugget">
+  <defs>
+    <radialGradient id="b" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#3a2f7a"/><stop offset="1" stop-color="#140f33"/></radialGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2a8"/><stop offset=".5" stop-color="#ffcf33"/><stop offset="1" stop-color="#b37700"/></linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#b)"/>
+  <path d="M48 120 L66 74 L104 56 L144 70 L158 112 L134 146 L82 150 Z" fill="url(#g)" stroke="#6b4500" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M66 74 L96 98 L104 56 M96 98 L144 70 M96 98 L82 150 M96 98 L158 112" stroke="#b37700" stroke-width="3" fill="none"/>
+  <path d="M150 40 l5 11 11 5 -11 5 -5 11 -5 -11 -11 -5 11 -5z" fill="#fff2a8"/>
+</svg>

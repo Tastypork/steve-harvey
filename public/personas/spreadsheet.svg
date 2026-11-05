@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Spreadsheet grid">
+  <defs><radialGradient id="b" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#6fe0a0"/><stop offset="1" stop-color="#18804a"/></radialGradient></defs>
+  <circle cx="100" cy="100" r="100" fill="url(#b)"/>
+  <rect x="46" y="50" width="108" height="100" rx="10" fill="#f2fff7" stroke="#0d4a2a" stroke-width="6"/>
+  <path d="M46 78 H154 M46 104 H154 M46 128 H154 M82 50 V150 M118 50 V150" stroke="#0d4a2a" stroke-width="5"/>
+  <rect x="46" y="50" width="108" height="28" rx="10" fill="#0d4a2a"/>
+  <rect x="84" y="106" width="32" height="20" fill="#ffcd41"/>
+</svg>
